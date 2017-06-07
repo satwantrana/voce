@@ -322,7 +322,7 @@ article.post:first-child .post-inner-content {
   margin-bottom: 15px;
 }
 .entry-footer {
-  margin-top: 20px;
+  margin-top: 5px;
   text-align: center;
 }
 .entry-footer > *,
@@ -806,7 +806,7 @@ letter-spacing: 1px;
 ----------------------------------------------- */
 
 #footer-area {
-  background-color: #f2f2f2;
+  /*background-color: #f2f2f2;*/
   color: #999;
 }
 #footer-area .footer-widget-area {

@@ -42,7 +42,7 @@
     {{tags|join(', ', attribute='0') }}">
   {% endblock %}
 
-  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <title>{{ SITENAME }} - {{ AUTHOR }}</title>
 
   {% include "modules/analytics.html" %}
   
@@ -114,11 +114,11 @@
                 </button>
               </div>
               <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul id="menu-all-pages" class="nav navbar-nav">
-                {% for name, link in LINKS %}
-                <li class="menu-item">{{ display_link(name, link, name) }}</li>
-                {% endfor %}
-              </ul>
+                <ul id="menu-all-pages" class="nav navbar-nav">
+                  {% for name, link in LINKS %}
+                  <li class="menu-item">{{ display_link(name, link, name) }}</li>
+                  {% endfor %}
+                </ul>
               </div>
               <div class="social">   
                {% for name, link in SOCIAL %}
@@ -130,11 +130,16 @@
         </div>
       </nav><!-- .site-navigation -->
 
-      <div class="container">
+    <!-- <div class="container">
       <div id="logo">
-        <span class="site-name"><a class="navbar-brand" href="{{ SITEURL }}"><img width="310" src="{{ USER_LOGO_URL }}" class="attachment-full size-full" alt="logo">          </a>
-        </span><!-- end of .site-name -->
-      </div><!-- end of #logo -->
+        <span class="site-name">
+          <a class="navbar-brand" href="{{ SITEURL }}">
+            <img width="310" src="{{ USER_LOGO_URL }}" class="attachment-full size-full" alt="logo">
+            {{ SITENAME }}
+          </a>
+        </span>
+      </div>
+
         <div class="tagline">
             {% if TAGS_URL %}
               {% for tag, articles in tags|sort %}
@@ -145,7 +150,7 @@
                 <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}" {{ 'class="active"' if  output_file == ARCHIVES_URL }}>{{ 'Archives ('+ articles|count|string + ')' if  articles|count > all_articles|count  else 'Archives (' + all_articles|count|string + ')'}}</a>
             {% endif %}
         </div>
-    </div>
+    </div> -->
 
   </header><!-- #masthead -->
   </div>
@@ -176,11 +181,13 @@
       <div class="site-info container">
         <div class="row">
                     <div class="copyright col-md-12">
-                    <a href="{{ SITEURL }}/pages/privacy-policy">Privacy Policy</a> | 
-                    <a href="{{ SITEURL }}/feeds/all.atom.xml">Atom Feed</a> | 
-                    <a href="{{ SITEURL }}/sitemap.xml">Sitemap</a><br />
-                    This site uses the <a href="https://github.com/limbenjamin/voce">voce</a> theme by <a href="//limbenjamin.com/">Benjamin Lim</a><br />
-                    &copy; 2012-2016 <a href="{{ SITEURL }}">{{ AUTHOR }}</a> </div>
+                      <a href="{{ SITEURL }}/pages/privacy-policy">Privacy Policy</a> | 
+                      <a href="{{ SITEURL }}/feeds/all.atom.xml">Atom Feed</a> | 
+                      <a href="{{ SITEURL }}/sitemap.xml">Sitemap</a> <br>
+                      <a href="https://github.com/satwantrana/voce">Voce</a> theme <a href="https://github.com/limbenjamin/voce">originally</a> 
+                      by <a href="//limbenjamin.com/">Benjamin Lim</a> | 
+                      &copy; 2017 onwards <a href="{{ SITEURL }}">{{ AUTHOR }}</a> 
+                    </div>
         </div>
       </div><!-- .site-info -->
       <div class="scroll-to-top" style="display: none;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
